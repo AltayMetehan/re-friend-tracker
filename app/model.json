@@ -43,7 +43,15 @@
                         "url": "/group",
                         "form": "GroupForm",
                         "width": 2
-                    },                       
+                    },
+                    {
+                        "id":   "activity",
+                        "type": "autocomplete",
+                        "name": "Activity",
+                        "page": "addactivitytofriendspage",
+                        "width": 2,
+                        "height": 2
+                    },                      
                     {
                         "id": "birthdate",
                         "type": "date",
@@ -85,6 +93,14 @@
                         "required": true
                     },
                     {
+                        "id": "comment",
+                        "type": "text",
+                        "name": "Comments",
+                        "width": 2,
+                        "height": 4,
+                        "maxLength": 5000
+                    },
+                    {
                         "type": "deleteButton",
                         "name": "Delete"
                     },
@@ -111,6 +127,20 @@
                         "required": true
                     },
                     {
+                        "id": "comment",
+                        "type": "text",
+                        "name": "Comments",
+                        "width": 2,
+                        "height": 4,
+                        "maxLength": 5000
+                    },
+                    {
+                        "id": "creationdate",
+                        "type": "date",
+                        "name": "CreationDate",
+                        "width": 2
+                    },
+                    {
                         "type": "deleteButton",
                         "name": "Delete"
                     },
@@ -123,7 +153,7 @@
                         "name": "Ok"
                     }
                 ]
-            },              
+            },             
             {
                 "id": "AddActivityForm",
                 "title": "Activity",
@@ -137,6 +167,54 @@
                         "defaultKey": "activityKey",
                         "readonly": true,
                         "form": "ActivityForm",
+                        "width": 2
+                    },
+                    {
+                        "type": "deleteButton",
+                        "name": "Delete"
+                    },
+                    {
+                        "type": "cancelButton",
+                        "name": "Cancel"
+                    },
+                    {
+                        "type": "okButton",
+                        "name": "Ok"
+                    }
+                ]
+            },
+            {
+                "id": "ActivityForm",
+                "title": "Activity",
+                "url": "/activity",
+                "formFieldList": [
+                    {
+                        "id": "activity",
+                        "type": "text",
+                        "name": "Activities",
+                        "width": 2,
+                        "required": true
+                    },
+                    {
+                        "id": "comment",
+                        "type": "text",
+                        "name": "Comments",
+                        "width": 2,
+                        "height": 4,
+                        "maxLength": 5000
+                    },
+                    {
+                        "id": "date",
+                        "type": "date",
+                        "name": "Date",
+                        "width": 2
+                    },
+                    {
+                        "id":   "location",
+                        "type": "autocomplete",
+                        "name": "Location",
+                        "url": "/location",
+                        "form": "LocationForm",
                         "width": 2
                     },
                     {
@@ -179,6 +257,12 @@
                         "icon": "fa-weixin",
                         "color": "wisteria",
                         "page": "groupspage"
+                    },
+                    {
+                        "type": "button",
+                        "name": "Activities",
+                        "color": "red",
+                        "page": "activitiespage"
                     }
                 ]
             },
@@ -260,6 +344,65 @@
                         "url": "/group",
                         "form": {
                             "form": "GroupForm"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "activitiespage",
+                "elementList": [
+                    {
+                        "type": "backbutton"
+                    },
+                    {
+                        "type": "newButton",
+                        "name": "AddActivity",
+                        "color": "green",
+                        "form": {
+                            "form": "ActivityForm"
+                        }
+                    },
+                    {
+                        "type": "list",
+                        "color": "red",
+                        "search": true,
+                        "url": "/activity",
+                        "form": {
+                            "form": "ActivityForm"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "addactivitytofriendspage",
+                "elementList": [
+                    {
+                        "type": "backbutton"
+                    },
+                    {
+                        "type": "newButton",
+                        "name": "NewFriend",
+                        "icon": "fa-user",
+                        "color": "green",
+                        "form": {
+                            "form": "FriendForm"
+                        }
+                    },
+                    {
+                        "type": "newButton",
+                        "name": "AddActivity",
+                        "color": "green",
+                        "form": {
+                            "form": "ActivityForm"
+                        }
+                    },
+                    {
+                        "type": "list",
+                        "color": "red",
+                        "search": true,
+                        "url": "/activity",
+                        "form": {
+                            "form": "ActivityForm"
                         }
                     }
                 ]
