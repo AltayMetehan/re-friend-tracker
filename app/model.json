@@ -46,7 +46,7 @@
                     },
                     {
                         "id":   "activity",
-                        "type": "autocomplete",
+                        "type": "button",
                         "name": "Activity",
                         "page": "addactivitytofriendspage",
                         "width": 2,
